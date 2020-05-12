@@ -12,8 +12,9 @@ database_url =
     """
 
 config :plantguru, Plantguru.Repo,
-  # ssl: true,
+  adapter: Ecto.Adapters.Postgres,
   url: database_url,
+  ssl: true,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "2") # default set to 2 because of gigalixir
 
 secret_key_base =
