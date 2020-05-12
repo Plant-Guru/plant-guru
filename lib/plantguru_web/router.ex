@@ -1,5 +1,6 @@
 defmodule PlantguruWeb.Router do
   use PlantguruWeb, :router
+  use Pow.Phoenix.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -10,14 +11,31 @@ defmodule PlantguruWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :protected do
+    plug Pow.Plug.RequireAuthenticated,
+      error_handler: Pow.Phoenix.PlugErrorHandler
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  scope "/" do
+    pipe_through :browser
+
+    pow_routes()
   end
 
   scope "/", PlantguruWeb do
     pipe_through :browser
 
     live "/", PageLive, :index
+  end
+
+  scope "/", PlantguruWeb do
+    pipe_through [:browser, :protected]
+
+    get "/dashboard", TestController, :dashboard
   end
 
   # Other scopes may use custom stacks.
@@ -32,12 +50,13 @@ defmodule PlantguruWeb.Router do
   # If your application does not have an admins-only section yet,
   # you can use Plug.BasicAuth to set up some basic authentication
   # as long as you are also using SSL (which you should anyway).
-  if Mix.env() in [:dev, :test] do
+  # @todo remove prod before going live
+  if Mix.env() in [:dev, :test, :prod] do
     import Phoenix.LiveDashboard.Router
 
     scope "/" do
       pipe_through :browser
-      live_dashboard "/dashboard", metrics: PlantguruWeb.Telemetry
+      live_dashboard "/status_dashboard", metrics: PlantguruWeb.Telemetry
     end
   end
 end
