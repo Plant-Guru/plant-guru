@@ -9,7 +9,20 @@
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
-  <body class="c-app flex-row align-items-center">
-    <%= @inner_content %>
+  <body class="c-app c-default-layout">
+    <header class="c-header">
+      <!-- Header content here -->
+    </header>
+    <div class="c-body">
+      <div class="c-sidebar">
+      <!-- Sidebar content here -->
+      </div>
+      <main class="c-main">
+          <%= @inner_content %>
+      </main>
+    </div>
+    <footer class="c-footer">
+      <!-- Footer content here -->
+    </footer>
   </body>
 </html>

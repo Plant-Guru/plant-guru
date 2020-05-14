@@ -1,6 +1,8 @@
 /* This file is for your main application css. */
-@import "./phoenix.css";
 @import "../node_modules/nprogress/nprogress.css";
+@import '~bootstrap/scss/bootstrap';
+@import "~@coreui/coreui/scss/coreui";
+@import "~@coreui/icons/scss/free/free-icons";
 
 /* LiveView specific classes for your customizations */
 .invalid-feedback {

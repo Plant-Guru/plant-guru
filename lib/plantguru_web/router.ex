@@ -14,6 +14,7 @@ defmodule PlantguruWeb.Router do
   pipeline :protected do
     plug Pow.Plug.RequireAuthenticated,
       error_handler: Pow.Phoenix.PlugErrorHandler
+    plug :put_root_layout, {PlantguruWeb.LayoutView, :root_authenticated}
   end
 
   pipeline :api do

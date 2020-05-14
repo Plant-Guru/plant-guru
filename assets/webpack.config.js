@@ -34,6 +34,10 @@ module.exports = (env, options) => {
           }
         },
         {
+          test: /\.(woff(2)?|eot|ttf|otf|svg)?(\?.*$|$)/,
+          loader: 'file-loader?&limit=10000&name=/fonts/[name].[ext]',
+        },
+        {
           test: /\.[s]?css$/,
           use: [
             MiniCssExtractPlugin.loader,
