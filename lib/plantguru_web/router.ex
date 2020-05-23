@@ -36,7 +36,7 @@ defmodule PlantguruWeb.Router do
   scope "/", PlantguruWeb do
     pipe_through [:browser, :protected]
 
-    get "/dashboard", TestController, :dashboard
+    get "/dashboard", DashboardController, :dashboard
   end
 
   # Other scopes may use custom stacks.

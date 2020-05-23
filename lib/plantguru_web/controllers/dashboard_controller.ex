@@ -1,4 +1,4 @@
-defmodule PlantguruWeb.TestController do
+defmodule PlantguruWeb.DashboardController do
     use PlantguruWeb, :controller
 
     def dashboard(conn, _params) do

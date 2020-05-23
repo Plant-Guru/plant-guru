@@ -1,6 +1,7 @@
 /* This file is for your main application css. */
 @import "../node_modules/nprogress/nprogress.css";
 @import '~bootstrap/scss/bootstrap';
+@import 'variables';
 @import "~@coreui/coreui/scss/coreui";
 @import "~@coreui/icons/scss/free/free-icons";
 
@@ -90,4 +91,27 @@
 }
 .alert:empty {
   display: none;
+}
+
+
+button:focus {
+  outline: none !important;
+}
+.c-sidebar-unfoldable:not(:hover) .ps {
+  overflow: initial!important;
+}
+@media (min-width: 992px) {
+  .c-sidebar-unfoldable:not(:hover) .c-sidebar-nav {
+    padding-bottom: 50px;
+    overflow: visible;
+  }
+  .c-sidebar-unfoldable:not(:hover) .c-sidebar-nav-link, .c-sidebar-unfoldable:not(:hover) .c-sidebar-nav-dropdown-toggle, .c-sidebar-unfoldable:not(:hover) .c-sidebar-nav-dropdown-toggle {
+    overflow: hidden;
+    white-space: nowrap;
+    border-left: 0;
+  }
+  .c-sidebar-unfoldable:not(:hover).c-sidebar-fixed {
+    z-index: 1031;
+    width: 56px;
+  }
 }

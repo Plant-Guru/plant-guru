@@ -10,15 +10,11 @@
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
   <body class="c-app c-default-layout">
-    <header class="c-header">
-      <!-- Header content here -->
-    </header>
-    <div class="c-body">
-      <div class="c-sidebar">
-      <!-- Sidebar content here -->
-      </div>
+    <%= render_shared "sidebar.html", assigns %>
+    <div class="c-wrapper">
+      <%= render_shared "header.html", assigns %>
       <main class="c-main">
-          <%= @inner_content %>
+        <%= @inner_content %>
       </main>
     </div>
     <footer class="c-footer">

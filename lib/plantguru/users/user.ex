@@ -4,7 +4,12 @@ defmodule Plantguru.Users.User do
 
   schema "users" do
     pow_user_fields()
-
+    many_to_many(
+      :devices,
+      Device,
+      join_through: "user_device",
+      on_replace: :delete
+    )
     timestamps()
   end
 end
