@@ -30,7 +30,7 @@ defmodule PlantguruWeb.Router do
   scope "/", PlantguruWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    get "/", LandingController, :page
   end
 
   scope "/", PlantguruWeb do

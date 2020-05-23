@@ -1,5 +1,6 @@
-defmodule Plantguru.Device do
+defmodule Plantguru.Devices.Device do
   use Ecto.Schema
+  alias Plantguru.Users.User
   import Ecto.Changeset
 
   @primary_key {:id, :binary_id, autogenerate: true}
