@@ -16,9 +16,9 @@
       <main class="c-main">
         <%= @inner_content %>
       </main>
+      <footer class="c-footer">
+        <!-- Footer content here -->
+      </footer>
     </div>
-    <footer class="c-footer">
-      <!-- Footer content here -->
-    </footer>
   </body>
 </html>

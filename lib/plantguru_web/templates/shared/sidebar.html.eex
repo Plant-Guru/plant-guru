@@ -1,6 +1,7 @@
 <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
     <div class="c-sidebar-brand d-md-down-none">
-        PlantGuru
+        <img src="/images/logo.png"/>
+        <span>PlantGuru</span>
     </div>
     <ul class="c-sidebar-nav ps">
         <li class="c-sidebar-nav-item">
