@@ -1,6 +1,7 @@
 defmodule Plantguru.Users.User do
   use Ecto.Schema
   use Pow.Ecto.Schema
+  alias Plantguru.Devices.Device
 
   schema "users" do
     pow_user_fields()
