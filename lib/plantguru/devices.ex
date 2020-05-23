@@ -1,17 +1,31 @@
 defmodule Plantguru.Devices do
-    import Ecto.Query
     alias Plantguru.Repo
-    alias Plantguru.Devices.Device
     alias Plantguru.Users.User
     def list_devices(%User{} = user) do
         Repo.all(Ecto.assoc(user, :devices))
+    end
 
-        # Repo.all(
-        #     from d in Device,
-        #     preload: [:users],
-        #     join: du in UserDevice, on: d.id == du.device_id,
-        #     join: u in User, on: u.id == du.user_id,
-        #     where: du.user_id == ^user_id
-        # )
+    def devices_count(%User{} = user) do
+        Repo.aggregate(
+            Ecto.assoc(user, :devices),
+            :count
+        )
+    end
+
+    def devices_count_online(%User{} = user) do
+        # @todo replace with correct status filter
+        Repo.aggregate(
+            Ecto.assoc(user, :devices),
+            :count
+        )
+    end
+
+
+    def devices_count_active(%User{} = user) do
+        # @todo replace with correct status filter
+        Repo.aggregate(
+            Ecto.assoc(user, :devices),
+            :count
+        )
     end
 end
