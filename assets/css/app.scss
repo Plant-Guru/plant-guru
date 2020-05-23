@@ -116,11 +116,29 @@ button:focus {
   }
 }
 
+html:not([data-scroll='0']) {
+  .normal {
+    .navbar {
+      background-color: #ccc;
+    }
+  }
+}
+
+.card {
+  &.bg-primary {
+    border-color: #8BA910;
+  }
+}
+
+.bg-primary {
+  background: $primary;
+  background: linear-gradient($primary, $secondary);
+}
+
 .normal {
 
   #mainNav {
     transition: all .35s;
-    font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
     font-weight: 200;
     letter-spacing: 1px;
   }
@@ -320,7 +338,8 @@ button:focus {
     font-size: 80px;
     display: block;
     margin-bottom: 15px;
-    background-image:linear-gradient(90deg,$primary, $secondary);    -webkit-background-clip: text;
+    background-image:linear-gradient(90deg,$primary, $secondary);
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
@@ -434,11 +453,6 @@ button:focus {
 
   footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li a.active {
     text-decoration: none;
-  }
-
-  .bg-primary {
-    background: $primary;
-    background: linear-gradient($primary, $secondary);
   }
 
   .text-primary {

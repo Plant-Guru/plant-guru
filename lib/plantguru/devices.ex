@@ -3,13 +3,15 @@ defmodule Plantguru.Devices do
     alias Plantguru.Repo
     alias Plantguru.Devices.Device
     alias Plantguru.Users.User
-    def list_devices(current_user) do
-        Device
-        |> user_devices_query(current_user)
-        |> Repo.all()
-    end
+    def list_devices(%User{} = user) do
+        Repo.all(Ecto.assoc(user, :devices))
 
-    defp user_devices_query(query, %User{id: user_id}) do
-        from(v in query, where: v.user_id == ^user_id)
+        # Repo.all(
+        #     from d in Device,
+        #     preload: [:users],
+        #     join: du in UserDevice, on: d.id == du.device_id,
+        #     join: u in User, on: u.id == du.user_id,
+        #     where: du.user_id == ^user_id
+        # )
     end
 end
