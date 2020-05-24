@@ -151,6 +151,12 @@ body:not([data-scroll='0']) {
   }
 }
 
+#session {
+  img.logo {
+    max-height: 100px;
+  }
+}
+
 .bg-primary {
   background: $primary;
   background: linear-gradient($primary, $secondary);
