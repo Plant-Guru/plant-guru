@@ -137,7 +137,7 @@ button:focus {
     }
   }
 }
-html:not([data-scroll='0']) {
+body:not([data-scroll='0']) {
   .normal {
     .navbar {
       background-color: #ccc;
