@@ -9,7 +9,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="<%= Routes.dashboard_path(@conn, :dashboard) %>">Dashboard</a></li>
                         <li class="nav-item"><%= link "Sign out", class: "nav-link js-scroll-trigger", to: Routes.pow_session_path(@conn, :delete), method: :delete %></li>
                     <% else %>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://github.com/Plant-Guru">Download</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://github.com/Plant-Guru">GitHub</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="<%= Routes.pow_session_path(@conn, :new) %>">Login</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="<%= Routes.pow_registration_path(@conn, :new) %>">Register</a></li>
                     <% end %>
@@ -23,7 +23,7 @@
                 <div class="col-lg-7 my-auto">
                     <div class="header-content mx-auto">
                         <h1 class="mb-5">PlantGuru is your solution to grow any kind of plant efficiently!</h1>
-                        <a href="https://github.com/Plant-Guru" class="btn btn-outline btn-xl js-scroll-trigger">Start Now!</a>
+                        <a href="<%= Routes.pow_registration_path(@conn, :new) %>" class="btn btn-outline btn-xl js-scroll-trigger">Start Now!</a>
                     </div>
                 </div>
                 <div class="col-lg-5 my-auto">
@@ -127,7 +127,7 @@
         <div class="cta-content">
             <div class="container">
                 <h2>Stop waiting.<br>Start growing.</h2>
-                <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
+                <a href="<%= Routes.pow_registration_path(@conn, :new) %>" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
             </div>
         </div>
     </section>
