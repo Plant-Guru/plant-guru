@@ -15,7 +15,7 @@
 
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="cil-user"></i></span>
+                  <span class="input-group-text"><i class="cil-envelope-closed"></i></span>
                 </div>
                 <%= text_input f, Pow.Ecto.Schema.user_id_field(@changeset), class: "form-control", placeholder: "E-Mail" %>
               </div>
@@ -44,9 +44,9 @@
           <div class="card-body text-center">
             <div>
               <img class="logo" src="/images/logo.png"/>
-              <h2>Sign up</h2>
+              <h2>Register now!</h2>
               <p>Start growing your own vegetable at your home with PlantGuru. Just sign up below for a free account!</p>
-              <%= link "Register Now!", to: Routes.pow_registration_path(@conn, :new), class: "btn btn-lg btn-outline-light mt-3" %>
+              <%= link "Sign up!", to: Routes.pow_registration_path(@conn, :new), class: "btn btn-lg btn-outline-light mt-3" %>
             </div>
           </div>
         </div>
