@@ -1,4 +1,4 @@
-defmodule Plantguru.Repo.Migrations.CreateDevices do
+defmodule Plantguru.Repo.Migrations.CreateUserDevices do
     use Ecto.Migration
 
     def change do
