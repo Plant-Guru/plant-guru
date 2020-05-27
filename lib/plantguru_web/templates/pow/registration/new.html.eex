@@ -1,9 +1,10 @@
-<div class="container c-app flex-row align-items-center" id="session">
+<div class="container c-app flex-row align-items-center justify-content-center" id="session">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card-group">
         <div class="card p-4">
           <div class="card-body">
+            <img class="logo d-md-down-block" src="/images/logo.png"/>
             <h1>Register</h1>
 
             <%= form_for @changeset, @action, [as: :user], fn f -> %>
@@ -50,7 +51,7 @@
             <div>
               <img class="logo" src="/images/logo.png"/>
               <h2>Sign in</h2>
-              <p>Start growing your own vegetable at your home with PlantGuru. Just sign up below for a free account!</p>
+              <p>Already have an account? Simply login by clicking the button below and start monitoring your greenhouses!</p>
               <%= link "Sign in!", to: Routes.pow_session_path(@conn, :new), class: "btn btn-lg btn-outline-light mt-3" %>
             </div>
           </div>

@@ -1,9 +1,10 @@
-<div class="container c-app flex-row align-items-center" id="session">
+<div class="container c-app flex-row align-items-center justify-content-center" id="session">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card-group">
         <div class="card p-4">
           <div class="card-body">
+            <img class="logo d-md-down-block" src="/images/logo.png"/>
             <h1>Login</h1>
             <p class="text-muted">Sign In to your account</p>
             <%= form_for @changeset, @action, [as: :user], fn f -> %>
