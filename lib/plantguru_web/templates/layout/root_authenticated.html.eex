@@ -30,7 +30,7 @@
     <%= render_shared "sidebar.html", assigns %>
     <div class="c-wrapper">
       <%= render_shared "header.html", assigns %>
-      <main class="c-main">
+      <main class="c-main p-0">
         <%= @inner_content %>
       </main>
       <footer class="c-footer">

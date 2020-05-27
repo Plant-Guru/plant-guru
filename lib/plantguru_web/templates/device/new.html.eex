@@ -1,0 +1,42 @@
+<div class="c-body">
+    <main class="c-main pt-4">
+        <div class="container-fluid">
+            <div id="ui-view">
+                <div>
+                    <div class="fade-in">
+                        <div class="row">
+                            <div class="col">
+                                <h2 class="pb-2">Provision Device</h2>
+                                <%= form_for @changeset, Routes.device_path(@conn, :create), fn f -> %>
+
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="cil-description"></i></span>
+                                        </div>
+                                        <%= text_input f, :name, class: "form-control", placeholder: "Name" %>
+                                    </div>
+                                    <%= error_tag f, :name %>
+
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="cil-description"></i></span>
+                                        </div>
+                                        <%= text_input f, :mac, class: "form-control", placeholder: "MAC-Address" %>
+                                    </div>
+                                    <%= error_tag f, :mac %>
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                        <%= submit "Add device", class: "btn btn-primary px-4" %>
+                                        </div>
+                                    </div>
+
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

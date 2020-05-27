@@ -37,6 +37,7 @@ defmodule PlantguruWeb.Router do
     pipe_through [:browser, :protected]
 
     get "/dashboard", DashboardController, :dashboard
+    resources "/devices", DeviceController, only: [:index, :show, :new, :create]
   end
 
   # Other scopes may use custom stacks.

@@ -10,7 +10,7 @@
             </a>
         </li>
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link" href="#">
+            <a class="c-sidebar-nav-link" href="<%= Routes.device_path(@conn, :index) %>">
                 <i class="c-sidebar-nav-icon cil-devices"></i>Devices
             </a>
         </li>

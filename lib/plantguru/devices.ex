@@ -1,6 +1,7 @@
 defmodule Plantguru.Devices do
     alias Plantguru.Repo
     alias Plantguru.Users.User
+    alias Plantguru.Devices.Device
     def list_devices(%User{} = user) do
         Repo.all(Ecto.assoc(user, :devices))
     end
@@ -27,5 +28,9 @@ defmodule Plantguru.Devices do
             Ecto.assoc(user, :devices),
             :count
         )
+    end
+
+    def change_device(%Device{} = device) do
+        Device.changeset(device, %{})
     end
 end

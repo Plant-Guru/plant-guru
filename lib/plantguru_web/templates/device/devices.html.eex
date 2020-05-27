@@ -1,55 +1,15 @@
-<div class="c-body pt-4">
-   <main class="c-main p-0">
+<div class="c-body">
+   <div class="c-subheader justify-content-between px-3">
+      <div></div>
+      <div class="c-subheader-nav d-md-down-none mfe-2">
+         <%= link "Add device", to: Routes.device_path(@conn, :new), class: "btn btn-primary" %>
+      </div>
+   </div>
+   <main class="c-main pt-4">
       <div class="container-fluid">
          <div id="ui-view">
             <div>
                <div class="fade-in">
-                  <div class="row">
-                     <div class="col-sm-6 col-lg-3">
-                        <div class="card text-white bg-gradient-primary">
-                           <div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
-                              <div>
-                                 <div class="text-value-lg"><%= @devices_count %></div>
-                                 <div>Devices total</div>
-                              </div>
-                           </div>
-                           <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"></div>
-                        </div>
-                     </div>
-                     <div class="col-sm-6 col-lg-3">
-                        <div class="card text-white bg-gradient-info">
-                           <div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
-                              <div>
-                                 <div class="text-value-lg"><%= @devices_count_online %></div>
-                                 <div>Devices online</div>
-                              </div>
-                           </div>
-                           <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"></div>
-                        </div>
-                     </div>
-                     <div class="col-sm-6 col-lg-3">
-                        <div class="card text-white bg-gradient-warning">
-                           <div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
-                              <div>
-                                 <div class="text-value-lg"><%= @devices_count - @devices_count_online %></div>
-                                 <div>Devices offline</div>
-                              </div>
-                           </div>
-                           <div class="c-chart-wrapper mt-3" style="height:70px;"></div>
-                        </div>
-                     </div>
-                     <div class="col-sm-6 col-lg-3">
-                        <div class="card text-white bg-gradient-danger">
-                           <div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
-                              <div>
-                                 <div class="text-value-lg"><%= @devices_count - @devices_count_active %></div>
-                                 <div>Devices unactive</div>
-                              </div>
-                           </div>
-                           <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"></div>
-                        </div>
-                     </div>
-                  </div>
                   <div class="card">
                      <div class="card-body">
                         <div class="d-flex justify-content-between">
